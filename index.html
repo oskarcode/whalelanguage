@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head> Speake the Whale language</head>
+
+<body>
+    <p>Click the button to see what Whale speak </p>
+    <button onclick="showResult()">try it </button>
+    <p id='demo'></p>
+
+    <script>
+        const input = 'i love kaitlin';
+        const vowels = ['a', 'e', 'i', 'o', 'u'];
+        const resultArray = [];
+        const speakWhale = (input, vowels) => {
+            for (let i = 0; i < input.length; i++) {
+                for (let j = 0; j < vowels.length; j++) {
+                    if (input[i] == vowels[j]) {
+                        if (input[i] == 'e') {
+                            resultArray.push('e', 'e');
+                        }
+                        else if (input[i] == 'u') {
+                            resultArray.push('u', 'u');
+                        }
+                        else {
+                            resultArray.push(input[i]);
+                        }
+                    }
+                }
+            }
+            return resultArray;
+        }
+        const showResult = () => {
+            console.log(speakWhale(input, vowels).join('').toUpperCase());
+            document.getElementById('demo').innerHTML = resultArray.join('').toUpperCase();
+        }
+
+        //console.log(speakWhale(input, vowels).join('').toUpperCase());//
+    </script>
+</body>
+
+
+
+
+
+
+
+
+</html>
